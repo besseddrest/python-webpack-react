@@ -6,7 +6,7 @@ export default class Home extends Component {
       <div className="grid-container">
         <div className="grid-x grid-padding-x">
           <div className="cell">
-            <h1>It Really Does Go!</h1>
+            <h1>It Really Does Go</h1>
           </div>
         </div>
       </div>
