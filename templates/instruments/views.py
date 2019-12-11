@@ -22,7 +22,7 @@ class Basses(Resource):
     my_json = request.get_json()
     return {'you sent': my_json}, 201
 
-api.add_resource(Basses, '/basses')
+api.add_resource(Basses, '/bass')
 
 @instruments_blueprint.route('/')
 def index():
