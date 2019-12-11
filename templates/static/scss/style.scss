@@ -1,0 +1,7 @@
+@import './settings';
+@import "~foundation-sites/scss/foundation";
+@include foundation-everything;
+
+h1 {
+  color: teal;
+}
