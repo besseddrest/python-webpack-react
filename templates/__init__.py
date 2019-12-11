@@ -4,7 +4,7 @@ app = Flask(__name__,
   static_folder = './public',
   template_folder= './static')
 
-from templates.bass.views import bass_blueprint
+from templates.instruments.views import instruments_blueprint
 
 # register the blueprints
-app.register_blueprint(bass_blueprint)
+app.register_blueprint(instruments_blueprint)
