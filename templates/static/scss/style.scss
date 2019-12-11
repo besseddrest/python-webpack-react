@@ -2,6 +2,14 @@
 @import "~foundation-sites/scss/foundation";
 @include foundation-everything;
 
-h1 {
-  color: teal;
+.header {
+  background-color: teal;
+
+  h1 {
+    color: white;
+  }
+}
+
+.main {
+  margin-top: 20px;
 }
