@@ -62,7 +62,7 @@ export default class Basses extends Component {
         <main className="main">
           <div className="grid-container">
             <div className="grid-x grid-padding-x">
-              <div class="cell auto">
+              <div className="cell auto">
                 {content}
               </div>
             </div>

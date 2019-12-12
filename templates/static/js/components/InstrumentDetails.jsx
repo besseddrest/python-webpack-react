@@ -17,7 +17,7 @@ export default class InstrumentDetails extends Component {
         <main className="main">
           <div className="grid-container">
             <div className="grid-x grid-padding-x">
-              <div class="cell auto">
+              <div className="cell auto">
                 I am a Bass guitar
               </div>
             </div>
