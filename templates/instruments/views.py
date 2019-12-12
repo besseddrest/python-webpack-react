@@ -5,7 +5,7 @@ instruments_blueprint = Blueprint('instruments', __name__)
 
 api = Api(instruments_blueprint)
 
-class Basses(Resource):
+class BassAPI(Resource):
   def get(self):
     return [
       {
@@ -22,7 +22,7 @@ class Basses(Resource):
     my_json = request.get_json()
     return {'you sent': my_json}, 201
 
-api.add_resource(Basses, '/basses')
+api.add_resource(BassAPI, '/basses')
 
 @instruments_blueprint.route('/')
 @instruments_blueprint.route('/bass')

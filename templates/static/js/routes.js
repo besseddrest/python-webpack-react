@@ -1,14 +1,12 @@
 import React from 'react';
 import { HashRouter, Route, hashHistory, Switch } from 'react-router-dom';
 import Home from './components/Home';
-import Bass from './components/Bass';
+import Basses from './components/Basses';
 
 // import more components
 export default (
   <HashRouter history={hashHistory}>
-    <div>
-      <Route exact path='/' component={Home} />
-      <Route path='/bass' component={Bass} />
-    </div>
-   </HashRouter>
+    <Route exact path='/' component={Home} />
+    <Route path='/bass' component={Basses} />
+  </HashRouter>
 );

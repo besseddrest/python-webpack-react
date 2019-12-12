@@ -1,19 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Header from './Header';
 
 export default class Home extends Component {
   render() {
     return (
       <div>
-        <header className="header">
-          <div className="grid-container">
-            <div className="grid-x grid-padding-x">
-              <div className="cell">
-                <h1><a href="/">It Really Does Go</a></h1>
-              </div>
-            </div>
-          </div>
-        </header>
+        <Header heading="It really does go" />
         <main className="main">
           <div className="grid-container">
             <div className="grid-x grid-padding-x">
