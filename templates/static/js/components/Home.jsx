@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 export default class Home extends Component {
   constructor(props) {
@@ -12,7 +11,7 @@ export default class Home extends Component {
         <div className="grid-container">
           <div className="grid-x grid-padding-x">
             <div className="cell auto">
-              <Link className="button" to="/bass">Basses</Link>
+              <p>A listing of my music instruments</p>
             </div>
           </div>
         </div>
