@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { HashRouter, Route, hashHistory, Switch } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import Header from './Header';
+import Bass from './Bass';
 
 export default class Basses extends Component {
   constructor(props) {
@@ -50,25 +51,25 @@ export default class Basses extends Component {
       content = <ul>
         {
           items.map((item, i) => (
-            <li key={i}><Link to="">{item.model}</Link></li>
+            <li key={i}><Link to={"/bass/" + i}>{item.model}</Link></li>
           ))
         }
       </ul>
     }
 
-    return (
-      <div>
-        <Header heading="List of Bass Guitars" />
+    return (      
+      <HashRouter history={ hashHistory }>
         <main className="main">
           <div className="grid-container">
             <div className="grid-x grid-padding-x">
               <div className="cell auto">
                 {content}
               </div>
+              <Route path="/bass/:bassId" render={(props) => <Bass {...props} items={this.state.items} />} />
             </div>
           </div>
         </main>
-      </div>
+      </HashRouter>
     )
   }
 };
