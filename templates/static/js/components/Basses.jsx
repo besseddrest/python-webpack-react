@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import { HashRouter, Route, hashHistory, Switch } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actionCreators from '../actions/actionCreators';
 import Bass from './Bass';
 
-export default class Basses extends Component {
+// TODO:
+// `connect` app at higher level component so data is accessible by all Components
+
+class Basses extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: [],
       isLoading: false,
       error: null
     }
@@ -15,6 +20,7 @@ export default class Basses extends Component {
 
   componentDidMount() {
     this.setState({ isLoading: true });
+
     fetch('/basses')
       .then(response => {
         if(response.ok) {
@@ -23,11 +29,10 @@ export default class Basses extends Component {
           throw new Error('Something went wrong...');
         }
       })
-      .then(result => this.setState({
-          items: result,
-          isLoading: false
-        })
-      )
+      .then(result => {
+        this.setState({ isLoading: false })
+        this.props.getBasses(result);
+      })
       .catch(error => this.setState({ 
           error, 
           isLoading: false
@@ -36,7 +41,8 @@ export default class Basses extends Component {
   }
 
   render() {
-    const { items, isLoading, error } = this.state;
+    const { basses } = this.props;
+    const { isLoading, error } = this.state;
     let content;
 
     if (error) {
@@ -47,11 +53,11 @@ export default class Basses extends Component {
       content =  <p>Loading...</p>;
     }
 
-    if (items.length > 0) {
+    if (basses && basses.length > 0) {
       content = <ul>
         {
-          items.map((item, i) => (
-            <li key={i}><Link to={"/bass/" + i}>{item.model}</Link></li>
+          basses.map((item, i) => (
+            <li key={i}><Link to={"/bass/" + item.id}>{item.model}</Link></li>
           ))
         }
       </ul>
@@ -65,7 +71,7 @@ export default class Basses extends Component {
               <div className="cell auto">
                 {content}
               </div>
-              <Route path="/bass/:bassId" render={(props) => <Bass {...props} items={this.state.items} />} />
+              <Route path="/bass/:bassId" render={(props) => <Bass {...props} basses={this.props.basses} />} />
             </div>
           </div>
         </main>
@@ -73,3 +79,15 @@ export default class Basses extends Component {
     )
   }
 };
+
+const mapStateToProps = (state) => {
+  return {
+    basses: state.basses
+  }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators(actionCreators, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Basses);

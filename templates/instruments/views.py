@@ -9,12 +9,19 @@ class BassAPI(Resource):
   def get(self):
     return [
       {
+        "id": 11,
         "make": "Ernie Ball",
         "model": "Joe Dart Signature Sterling"
       },
       {
+        "id": 12,
         "make": "Fender",
         "model": "Marcus Miller Signature Jazz"
+      },
+      {
+        "id": 13,
+        "make": "Fender",
+        "model": "Flea Relic Jazz Bass"
       }
     ]
 
