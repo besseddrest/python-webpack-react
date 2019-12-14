@@ -7,14 +7,20 @@ export default class Bass extends Component {
 
   render() {
     const { bassId } = this.props.match.params;
-    const item = this.props.basses.find(item => item.id == bassId);
+    if (this.props.basses.length > 1) {
+      const item = this.props.basses.find(item => item.id == bassId);
 
-    return (
-      <div className="cell auto">
-        <p><strong>ID: </strong> { item.id }</p>
-        <p><strong>Name: </strong> { item.model }</p>
-        <p><strong>Make: </strong> { item.make }</p>
-      </div>
-    )      
+      return (
+        <div className="cell auto">
+          <h2>{ item.model }</h2>
+          <ul>
+            <li><strong>ID:</strong> { item.id }</li>
+            <li><strong>Make:</strong> { item.make }</li>
+          </ul>
+        </div>
+      )
+    }
+
+    return null;
   }
 };

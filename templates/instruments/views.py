@@ -11,17 +11,26 @@ class BassAPI(Resource):
       {
         "id": 11,
         "make": "Ernie Ball",
-        "model": "Joe Dart Signature Sterling"
+        "model": "Joe Dart Signature Sterling",
+        "color": "natural"
       },
       {
         "id": 12,
         "make": "Fender",
-        "model": "Marcus Miller Signature Jazz"
+        "model": "Marcus Miller Signature Jazz",
+        "color": "natural"
       },
       {
         "id": 13,
         "make": "Fender",
-        "model": "Flea Relic Jazz Bass"
+        "model": "Flea Relic Jazz Bass",
+        "color": "shell pink"
+      },
+      {
+        "id": 14,
+        "make": "Squier",
+        "model": "Fretless Vintage Modified",
+        "color": "sunburst"
       }
     ]
 
