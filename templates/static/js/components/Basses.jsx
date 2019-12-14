@@ -7,7 +7,8 @@ import * as actionCreators from '../actions/actionCreators';
 import Bass from './Bass';
 
 // TODO:
-// `connect` app at higher level component so data is accessible by all Components
+// - `connect` app at higher level component so data is accessible by all Components
+// - app will throw error if loaded from a details url (/bass/:bassId)
 
 class Basses extends Component {
   constructor(props) {
