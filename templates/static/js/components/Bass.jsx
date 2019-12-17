@@ -13,9 +13,10 @@ export default class Bass extends Component {
       return (
         <div className="cell auto">
           <h2>{ item.model }</h2>
-          <ul>
+          <ul className="no-bullet">
             <li><strong>ID:</strong> { item.id }</li>
             <li><strong>Make:</strong> { item.make }</li>
+            <li><strong>Color:</strong> { item.color }</li>
           </ul>
         </div>
       )
