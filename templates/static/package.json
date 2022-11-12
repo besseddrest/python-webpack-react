@@ -23,7 +23,7 @@
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.1",
     "webpack": "^4.19.1",
-    "webpack-cli": "^3.1.0"
+    "webpack-cli": "^3.3.12"
   },
   "dependencies": {
     "foundation-sites": "^6.6.0",
